@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flexy Free Bootstrap Admin Template by WrapPixel</title>
+    <title>Login Admin perpus UNUHA </title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/favicon.png') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
 </head>
@@ -23,7 +23,7 @@
                                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                                     <img src="{{ asset('assets/images/logos/logo.svg') }}" alt="">
                                 </a>
-                                <p class="text-center mb-2">Your Social Campaigns</p>
+                                {{-- <h3 class="text-center fw-bold text-primary mb-4">Login</h3> --}}
                                 <form action="{{ route('auth') }}" method="POST">
                                     @csrf
                                     @if (session('failed'))
@@ -39,12 +39,24 @@
                                         </div>
                                     @endif
 
+                                    @error('email')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Username</label>
                                         <input type="email" name="email" class="form-control"
                                             id="exampleInputEmail1" aria-describedby="emailHelp" required
                                             placeholder="masukan email ">
                                     </div>
+
+                                    @error('password')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
 
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
