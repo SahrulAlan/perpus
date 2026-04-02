@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PustakawanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -37,6 +39,17 @@ Route::middleware(['CekLogin'])->group(function () {
     Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
     Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
 
+    #Profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.passwordupdate');
+
+    #pustakawan
+    Route::get('/pustakawans', [PustakawanController::class, 'index'])->name('pustakawan.index');
+    Route::get('/pustakawan/create', [PustakawanController::class, 'create'])->name('pustakawan.create');
+    Route::post('/pustakawans', [PustakawanController::class, 'store'])->name('pustakawan.store');
+    Route::get('/pustakawans/{id}/edit', [PustakawanController::class, 'edit'])->name('pustakawan.edit');
+    Route::put('/pustakawans/{id}', [PustakawanController::class, 'update'])->name('pustakawan.update');
+    Route::delete('/pustakawans/{id}', [PustakawanController::class, 'destroy'])->name('pustakawan.destroy');
     #frontPage
     // Route::get('/', [FrontpageController::class, 'index'])->name('frontpage.index');
     // Route::get('berita/beritafront', [FrontpageController::class, 'berita'])->name('frontpage.berita');

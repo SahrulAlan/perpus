@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Perpustakaan UNUHA - Pusat Informasi & Sistem Perpustakaan
+        </title>
+
+        <!-- Bootstrap 5 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- AOS Animation -->
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+
+        <style>
+            :root {
+                --primary: #2c5f2d;
+                --primary-dark: #1e3a1e;
+                --primary-light: #4a7c4b;
+                --secondary: #d4a373;
+                --secondary-dark: #b5835a;
+                --accent: #e9c46a;
+                --dark: #2d3e2b;
+                --light: #fefae0;
+                --gray: #6c757d;
+                --success: #40916c;
+                --info: #48cae4;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Inter", sans-serif;
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                color: var(--dark);
+                overflow-x: hidden;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: var(--primary);
+                border-radius: 5px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: var(--primary-dark);
+            }
+
+            /* Navbar */
+            .navbar {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                padding: 1rem 0;
+                transition: all 0.3s ease;
+            }
+
+            .navbar.scrolled {
+                padding: 0.5rem 0;
+                background: white;
+            }
+
+            .navbar-brand {
+                font-weight: 800;
+                font-size: 1.5rem;
+                color: var(--primary) !important;
+            }
+
+            .navbar-brand i {
+                color: var(--secondary);
+                margin-right: 8px;
+            }
+
+            .nav-link {
+                font-weight: 500;
+                color: var(--dark) !important;
+                transition: all 0.3s;
+                position: relative;
+                margin: 0 0.25rem;
+            }
+
+            .nav-link:hover {
+                color: var(--primary) !important;
+            }
+
+            .nav-link::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                background: var(--secondary);
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: width 0.3s;
+            }
+
+            .nav-link:hover::after {
+                width: 80%;
+            }
+
+            /* Hero Section */
+            .hero {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-dark) 0%,
+                    var(--primary) 100%
+                );
+                padding: 120px 0 80px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>')
+                    no-repeat bottom;
+                background-size: cover;
+                opacity: 0.3;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+                font-weight: 800;
+                margin-bottom: 1.5rem;
+                color: white;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                opacity: 0.95;
+                margin-bottom: 2rem;
+                color: white;
+            }
+
+            .hero-stats {
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+                font-weight: 800;
+                color: var(--accent);
+            }
+
+            /* Cards Sistem Informasi */
+            .system-card {
+                background: white;
+                border-radius: 20px;
+                padding: 2rem;
+                text-align: center;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                text-decoration: none;
+                display: block;
+                color: inherit;
+            }
+
+            .system-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+            }
+
+            .system-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .system-icon {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-light)
+                );
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1.5rem;
+                box-shadow: 0 10px 20px rgba(44, 95, 45, 0.3);
+            }
+
+            .system-icon i {
+                font-size: 2.5rem;
+                color: white;
+            }
+
+            .system-card h3 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                color: var(--primary);
+            }
+
+            .system-card p {
+                color: var(--gray);
+                line-height: 1.6;
+                margin-bottom: 0;
+            }
+
+            .system-badge {
+                display: inline-block;
+                background: rgba(44, 95, 45, 0.1);
+                color: var(--primary);
+                padding: 0.25rem 1rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                margin-top: 1rem;
+            }
+
+            /* Section Header */
+            .section-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--primary);
+                margin-bottom: 1rem;
+                position: relative;
+                display: inline-block;
+            }
+
+            .section-header h2::after {
+                content: "";
+                position: absolute;
+                width: 80px;
+                height: 4px;
+                background: var(--secondary);
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 2px;
+            }
+
+            .section-header p {
+                font-size: 1.1rem;
+                color: var(--gray);
+                max-width: 700px;
+                margin: 1rem auto 0;
+            }
+
+            /* Berita Card */
+            .news-card {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                height: 100%;
+            }
+
+            .news-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .news-img {
+                height: 220px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .news-category {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: var(--primary);
+                color: white;
+                padding: 0.25rem 1rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+
+            .news-content {
+                padding: 1.5rem;
+            }
+
+            .news-date {
+                font-size: 0.85rem;
+                color: var(--gray);
+                margin-bottom: 0.5rem;
+                display: block;
+            }
+
+            .news-title {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: var(--dark);
+                margin-bottom: 0.75rem;
+                line-height: 1.4;
+            }
+
+            .news-excerpt {
+                color: var(--gray);
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            .read-more {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                transition: gap 0.3s;
+            }
+
+            .read-more:hover {
+                gap: 1rem;
+                color: var(--primary-dark);
+            }
+
+            /* About Section */
+            .about-section {
+                background: white;
+                border-radius: 30px;
+                padding: 3rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            }
+
+            .about-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-light)
+                );
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+
+            .about-icon i {
+                font-size: 2rem;
+                color: white;
+            }
+
+            /* Footer */
+            .footer {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--dark)
+                );
+                color: white;
+                padding: 4rem 0 2rem;
+                margin-top: 4rem;
+            }
+
+            .footer h5 {
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                position: relative;
+                padding-bottom: 0.5rem;
+            }
+
+            .footer h5::after {
+                content: "";
+                position: absolute;
+                width: 40px;
+                height: 2px;
+                background: var(--secondary);
+                bottom: 0;
+                left: 0;
+            }
+
+            .footer a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                transition: all 0.3s;
+            }
+
+            .footer a:hover {
+                color: var(--secondary);
+                padding-left: 5px;
+            }
+
+            .footer-social {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .footer-social a {
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s;
+            }
+
+            .footer-social a:hover {
+                background: var(--secondary);
+                transform: translateY(-5px);
+                padding-left: 0;
+            }
+
+            .copyright {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 2rem;
+                margin-top: 2rem;
+                text-align: center;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .hero h1 {
+                    font-size: 2.2rem;
+                }
+
+                .hero p {
+                    font-size: 1rem;
+                }
+
+                .section-header h2 {
+                    font-size: 2rem;
+                }
+
+                .about-section {
+                    padding: 1.5rem;
+                }
+
+                .stat-number {
+                    font-size: 1.5rem;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .hero {
+                    padding: 100px 0 60px;
+                    text-align: center;
+                }
+
+                .hero-stats .col-6 {
+                    margin-bottom: 1rem;
+                }
+
+                .system-card {
+                    padding: 1.5rem;
+                }
+            }
+
+            /* Button Custom */
+            .btn-custom {
+                background: linear-gradient(
+                    135deg,
+                    var(--secondary),
+                    var(--secondary-dark)
+                );
+                color: white;
+                padding: 0.8rem 2rem;
+                border-radius: 50px;
+                font-weight: 600;
+                transition: all 0.3s;
+                border: none;
+            }
+
+            .btn-custom:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(212, 163, 115, 0.3);
+                color: white;
+            }
+
+            /* Animation */
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .floating {
+                animation: float 3s ease-in-out infinite;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-book-open"></i>
+                    Perpustakaan UNUHA
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#systems"
+                                >Sistem Perpus</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#news">Berita</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Tentang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7" data-aos="fade-up">
+                        <h1>
+                            Perpustakaan Digital <br />Universitas Nurul Huda
+                        </h1>
+                        <p class="lead">
+                            Akses semua layanan perpustakaan dalam satu platform
+                            terintegrasi. Temukan buku, skripsi, dan koleksi
+                            digital dengan mudah.
+                        </p>
+                        <a href="#systems" class="btn btn-custom">
+                            <i class="fas fa-arrow-right me-2"></i>Jelajahi
+                            Layanan
+                        </a>
+
+                        <div class="hero-stats row g-3 mt-4">
+                            <div class="col-4 text-center">
+                                <div class="stat-number">25K+</div>
+                                <div class="small">Koleksi Buku</div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div class="stat-number">5K+</div>
+                                <div class="small">Skripsi Tersedia</div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div class="stat-number">10K+</div>
+                                <div class="small">E-Book Digital</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-5 text-center"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png"
+                            alt="Library"
+                            class="img-fluid floating"
+                            style="max-width: 300px"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sistem Informasi Perpustakaan -->
+        <section id="systems" class="py-5">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Sistem Informasi Perpustakaan</h2>
+                    <p>
+                        Akses 3 sistem perpustakaan dalam satu platform. Cari
+                        buku, baca skripsi, atau pinjam e-book dengan mudah!
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <!-- SLIMS Card -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <a href="#" class="system-card" target="_blank">
+                            <div class="system-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>SLIMS</h3>
+                            <p>
+                                Sistem pencarian koleksi buku fisik. Temukan
+                                lokasi buku di rak perpustakaan dengan cepat dan
+                                akurat.
+                            </p>
+                            <span class="system-badge">
+                                <i class="fas fa-book me-1"></i> 15,000+ Koleksi
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- SIREPO Card -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <a href="#" class="system-card" target="_blank">
+                            <div class="system-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>SIREPO</h3>
+                            <p>
+                                Repository skripsi mahasiswa. Baca PDF skripsi
+                                sebagai referensi dan upload tugas akhir Anda.
+                            </p>
+                            <span class="system-badge">
+                                <i class="fas fa-file-pdf me-1"></i> 5,000+
+                                Skripsi
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- Digilib Card -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+                        <a href="#" class="system-card" target="_blank">
+                            <div class="system-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Digilib</h3>
+                            <p>
+                                Perpustakaan digital online. Baca dan pinjam
+                                e-book kapan saja, di mana saja.
+                            </p>
+                            <span class="system-badge">
+                                <i class="fas fa-ebook me-1"></i> 10,000+ E-Book
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Berita Terbaru -->
+        <section id="news" class="py-5" style="background: #f8f9fa">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Berita & Informasi Terbaru</h2>
+                    <p>
+                        Update terkini seputar perpustakaan dan kampus
+                        Universitas Nurul Huda
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <!-- Berita 1 -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="news-card">
+                            <div style="position: relative">
+                                <img
+                                    src="https://picsum.photos/id/20/400/250"
+                                    alt="News"
+                                    class="news-img"
+                                />
+                                <span class="news-category">Perpustakaan</span>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-date"
+                                    ><i class="far fa-calendar-alt me-1"></i> 1
+                                    April 2025</span
+                                >
+                                <h4 class="news-title">
+                                    Peluncuran Layanan Digital Library Terbaru
+                                </h4>
+                                <p class="news-excerpt">
+                                    Perpustakaan UNUHA resmi meluncurkan layanan
+                                    digital library dengan koleksi lebih dari
+                                    10.000 e-book...
+                                </p>
+                                <a href="#" class="read-more"
+                                    >Baca Selengkapnya
+                                    <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Berita 2 -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="news-card">
+                            <div style="position: relative">
+                                <img
+                                    src="https://picsum.photos/id/26/400/250"
+                                    alt="News"
+                                    class="news-img"
+                                />
+                                <span class="news-category">Kampus</span>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-date"
+                                    ><i class="far fa-calendar-alt me-1"></i> 28
+                                    Maret 2025</span
+                                >
+                                <h4 class="news-title">
+                                    Workshop Penulisan Skripsi Bersama Alumni
+                                </h4>
+                                <p class="news-excerpt">
+                                    Program studi menyelenggarakan workshop
+                                    penulisan skripsi untuk mahasiswa akhir
+                                    bersama alumni berprestasi...
+                                </p>
+                                <a href="#" class="read-more"
+                                    >Baca Selengkapnya
+                                    <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Berita 3 -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+                        <div class="news-card">
+                            <div style="position: relative">
+                                <img
+                                    src="https://picsum.photos/id/22/400/250"
+                                    alt="News"
+                                    class="news-img"
+                                />
+                                <span class="news-category">Perpustakaan</span>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-date"
+                                    ><i class="far fa-calendar-alt me-1"></i> 20
+                                    Maret 2025</span
+                                >
+                                <h4 class="news-title">
+                                    Peningkatan Layanan SLIMS dengan Fitur
+                                    Pencarian Baru
+                                </h4>
+                                <p class="news-excerpt">
+                                    Sistem pencarian buku SLIMS kini dilengkapi
+                                    dengan fitur pencarian berbasis AI untuk
+                                    memudahkan mahasiswa...
+                                </p>
+                                <a href="#" class="read-more"
+                                    >Baca Selengkapnya
+                                    <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Berita 4 -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                    >
+                        <div class="news-card">
+                            <div style="position: relative">
+                                <img
+                                    src="https://picsum.photos/id/23/400/250"
+                                    alt="News"
+                                    class="news-img"
+                                />
+                                <span class="news-category">Akademik</span>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-date"
+                                    ><i class="far fa-calendar-alt me-1"></i> 15
+                                    Maret 2025</span
+                                >
+                                <h4 class="news-title">
+                                    Pendaftaran Ujian Skripsi Periode April 2025
+                                </h4>
+                                <p class="news-excerpt">
+                                    Informasi pendaftaran ujian skripsi periode
+                                    April 2025 telah dibuka. Segera lengkapi
+                                    persyaratan...
+                                </p>
+                                <a href="#" class="read-more"
+                                    >Baca Selengkapnya
+                                    <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Berita 5 -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                    >
+                        <div class="news-card">
+                            <div style="position: relative">
+                                <img
+                                    src="https://picsum.photos/id/29/400/250"
+                                    alt="News"
+                                    class="news-img"
+                                />
+                                <span class="news-category">Perpustakaan</span>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-date"
+                                    ><i class="far fa-calendar-alt me-1"></i> 10
+                                    Maret 2025</span
+                                >
+                                <h4 class="news-title">
+                                    Donasi Buku dari Alumni untuk Perpustakaan
+                                </h4>
+                                <p class="news-excerpt">
+                                    Alumni UNUHA mendonasikan lebih dari 500
+                                    buku baru untuk menambah koleksi
+                                    perpustakaan...
+                                </p>
+                                <a href="#" class="read-more"
+                                    >Baca Selengkapnya
+                                    <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Berita 6 -->
+                    <div
+                        class="col-md-6 col-lg-4"
+                        data-aos="fade-up"
+                        data-aos-delay="600"
+                    >
+                        <div class="news-card">
+                            <div style="position: relative">
+                                <img
+                                    src="https://picsum.photos/id/24/400/250"
+                                    alt="News"
+                                    class="news-img"
+                                />
+                                <span class="news-category">Kampus</span>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-date"
+                                    ><i class="far fa-calendar-alt me-1"></i> 5
+                                    Maret 2025</span
+                                >
+                                <h4 class="news-title">
+                                    Kunjungan Studi Banding ke Perpustakaan
+                                    UNUHA
+                                </h4>
+                                <p class="news-excerpt">
+                                    Mahasiswa dari universitas lain melakukan
+                                    studi banding terkait pengelolaan
+                                    perpustakaan digital...
+                                </p>
+                                <a href="#" class="read-more"
+                                    >Baca Selengkapnya
+                                    <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="#" class="btn btn-outline-primary btn-lg px-4">
+                        <i class="fas fa-newspaper me-2"></i>Lihat Semua Berita
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="about-section" data-aos="fade-up">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 text-center mb-4 mb-lg-0">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png"
+                                alt="Library"
+                                class="img-fluid floating"
+                                style="max-width: 250px"
+                            />
+                        </div>
+                        <div class="col-lg-7">
+                            <h2 class="mb-4" style="color: var(--primary)">
+                                Tentang Perpustakaan UNUHA
+                            </h2>
+                            <p class="lead mb-4">
+                                Perpustakaan Universitas Nurul Huda berkomitmen
+                                memberikan layanan terbaik untuk mendukung
+                                kegiatan akademik dan penelitian.
+                            </p>
+
+                            <div class="row g-4 mt-3">
+                                <div class="col-sm-6">
+                                    <div class="about-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <h5>Jam Layanan</h5>
+                                    <p class="text-muted">
+                                        Senin - Jumat: 08.00 - 20.00<br />Sabtu:
+                                        08.00 - 15.00
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="about-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h5>Anggota Aktif</h5>
+                                    <p class="text-muted">
+                                        5,000+ Mahasiswa<br />100+ Dosen & Staff
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="about-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <h5>Koleksi</h5>
+                                    <p class="text-muted">
+                                        25,000+ Buku Fisik<br />10,000+ E-Book
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="about-icon">
+                                        <i class="fas fa-chalkboard-user"></i>
+                                    </div>
+                                    <h5>Ruang Belajar</h5>
+                                    <p class="text-muted">
+                                        5 Ruang Diskusi<br />100+ Tempat Duduk
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="footer">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <h5>
+                            <i class="fas fa-book-open me-2"></i>Perpustakaan
+                            UNUHA
+                        </h5>
+                        <p class="mt-3">
+                            Mencerdaskan kehidupan bangsa melalui layanan
+                            perpustakaan digital yang modern dan terintegrasi.
+                        </p>
+                        <div class="footer-social mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h5>Tautan Cepat</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><a href="#home">Beranda</a></li>
+                            <li class="mb-2">
+                                <a href="#systems">Sistem Perpus</a>
+                            </li>
+                            <li class="mb-2"><a href="#news">Berita</a></li>
+                            <li class="mb-2"><a href="#about">Tentang</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h5>Sistem Informasi</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2">
+                                <a href="#">SLIMS - Katalog Buku</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#">SIREPO - Repository Skripsi</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#">Digilib - E-Library</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h5>Kontak Kami</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                Kampus UNUHA, Sumatera Selatan
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-phone me-2"></i> (0711) 123456
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-envelope me-2"></i>
+                                library@unuja.ac.id
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>
+                        &copy; 2025 Perpustakaan Universitas Nurul Huda. All
+                        rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+
+            // Navbar scroll effect
+            window.addEventListener("scroll", function () {
+                const navbar = document.querySelector(".navbar");
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        this.getAttribute("href"),
+                    );
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
+            });
+
+            // Ganti link sistem dengan URL sebenarnya (sesuaikan dengan domain masing-masing)
+            // Contoh: document.querySelectorAll('.system-card')[0].href = 'https://slims.unuja.ac.id';
+            // document.querySelectorAll('.system-card')[1].href = 'https://sirepo.unuja.ac.id';
+            // document.querySelectorAll('.system-card')[2].href = 'https://digilib.unuja.ac.id';
+        </script>
+    </body>
+</html>

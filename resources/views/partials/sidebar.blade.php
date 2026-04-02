@@ -27,12 +27,26 @@
                 <!-- Dashboard -->
                 <!-- ---------------------------------- -->
                 <li class="sidebar-item">
-                    <a class="sidebar-link justify-content-between" href="#" aria-expanded="false">
+                    <a class="sidebar-link justify-content-between" href="{{ route('profile.index') }}"
+                        aria-expanded="false">
                         <div class="d-flex align-items-center gap-3">
                             <span class="d-flex">
-                                <i class="ti ti-shopping-cart"></i>
+                                <i class="ti ti-user"></i>
                             </span>
-                            <span class="hide-menu">eCommerce</span>
+                            <span class="hide-menu">Profile</span>
+                        </div>
+
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link justify-content-between" href="{{ route('pustakawan.index') }}"
+                        aria-expanded="false">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="d-flex">
+                                <i class="ti ti-user"></i>
+                            </span>
+                            <span class="hide-menu">Pustakawan</span>
                         </div>
 
                     </a>

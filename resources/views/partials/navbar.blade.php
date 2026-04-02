@@ -44,7 +44,7 @@
                             </div>
 
                             <!-- Menu items -->
-                            <a href="javascript:void(0)"
+                            <a href="{{ route('profile.index') }}"
                                 class="d-flex align-items-center gap-3 dropdown-item px-3 py-2 rounded-2 mb-1">
                                 <i class="ti ti-user fs-5 text-primary"></i>
                                 <span class="mb-0 fs-3 fw-medium">My Profile</span>
