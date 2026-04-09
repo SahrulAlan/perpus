@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;
 
 class BeritaController extends Controller
@@ -55,17 +56,16 @@ class BeritaController extends Controller
                 'slug' => $this->generateUniqueSlug($request->judul),
             ]);
 
+            Alert::success('Sukses', 'Berita berhasil ditambahkan!');
             return redirect()
-                ->route('berita.index')
-                ->with('success', 'Berhasil Upload Berita');
+                ->route('berita.index');
         } catch (\Exception $e) {
 
             // Opsional: log error untuk debugging
             Log::error("Gagal upload berita: " . $e->getMessage());
-
+            Alert::error('Error', 'Gagal menambahkan berita. Silakan coba lagi.');
             return redirect()
-                ->route('berita.index')
-                ->with('error', 'Gagal Upload Berita');
+                ->route('berita.index');
         }
     }
 
@@ -131,15 +131,14 @@ class BeritaController extends Controller
 
             $berita->update($data);
 
+            Alert::success('Sukses', 'Berita berhasil diperbarui!');
             return redirect()
-                ->route('berita.index')
-                ->with('success', 'Berita berhasil diperbarui!');
+                ->route('berita.index');
         } catch (\Exception $e) {
             Log::error('Gagal update berita: ' . $e->getMessage());
-
+            Alert::error('Error', 'Gagal memperbarui berita. Silakan coba lagi.');
             return redirect()
-                ->route('berita.index')
-                ->with('error', 'Gagal memperbarui berita!');
+                ->route('berita.index');
         }
     }
 
@@ -154,8 +153,8 @@ class BeritaController extends Controller
         }
 
         $berita->delete();
-
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus!');
+        Alert::success('Sukses', 'Berita berhasil dihapus!');
+        return redirect()->route('berita.index');
     }
 
     public function datatables()

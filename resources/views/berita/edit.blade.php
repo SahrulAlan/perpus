@@ -120,13 +120,3 @@
 
     </div>
 @endsection
-
-@push('scripts')
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#konten'), {
-                height: '400px'
-            })
-            .catch(error => console.error(error));
-    </script>
-@endpush

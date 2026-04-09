@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pustakawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PustakawanController extends Controller
 {
@@ -44,8 +45,8 @@ class PustakawanController extends Controller
         }
 
         $pustakawan->save();
-
-        return redirect()->route('pustakawan.index')->with('success', 'Pustakawan berhasil ditambahkan.');
+        Alert::success('Sukses', 'Pustakawan berhasil ditambahkan!');
+        return redirect()->route('pustakawan.index');
     }
 
     public function edit($id)
@@ -83,8 +84,8 @@ class PustakawanController extends Controller
         }
 
         $pustakawan->save();
-
-        return redirect()->route('pustakawan.index')->with('success', 'Pustakawan berhasil diperbarui.');
+        Alert::success('Sukses', 'Pustakawan berhasil diperbarui!');
+        return redirect()->route('pustakawan.index');
     }
 
     public function destroy($id)
@@ -97,7 +98,7 @@ class PustakawanController extends Controller
         }
 
         $pustakawan->delete();
-
-        return redirect()->route('pustakawan.index')->with('success', 'Pustakawan berhasil dihapus.');
+        Alert::success('Sukses', 'Pustakawan berhasil dihapus!');
+        return redirect()->route('pustakawan.index');
     }
 }

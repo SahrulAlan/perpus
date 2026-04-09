@@ -3,14 +3,22 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PustakawanController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingpageController::class, 'index'])->name('landingpage.index');
 
+#frontPage
+Route::get('/', [LandingpageController::class, 'index'])->name('landingpage.index');
+Route::get('berita/beritafront', [LandingpageController::class, 'berita'])->name('landingpage.berita');
+Route::get('pustakawan/frontpage', [LandingpageController::class, 'pustakawan'])->name('landingpage.pustakawan');
+Route::get('/bacaberita/{berita:slug}', [LandingpageController::class, 'show'])->name('landingpage.berita.show');
+
+Route::get('/landingpage/bacaberita', function () {
+    return view('landingpage.bacaberita');
+});
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -50,9 +58,4 @@ Route::middleware(['CekLogin'])->group(function () {
     Route::get('/pustakawans/{id}/edit', [PustakawanController::class, 'edit'])->name('pustakawan.edit');
     Route::put('/pustakawans/{id}', [PustakawanController::class, 'update'])->name('pustakawan.update');
     Route::delete('/pustakawans/{id}', [PustakawanController::class, 'destroy'])->name('pustakawan.destroy');
-    #frontPage
-    // Route::get('/', [FrontpageController::class, 'index'])->name('frontpage.index');
-    // Route::get('berita/beritafront', [FrontpageController::class, 'berita'])->name('frontpage.berita');
-    // Route::get('pengurus/pengurusbempes', [FrontpageController::class, 'pengurus'])->name('pengurus.show');
-    // Route::get('/berita/{berita:slug}', [FrontpageController::class, 'show'])->name('berita.show');
 });
