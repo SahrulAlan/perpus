@@ -48,4 +48,15 @@ class LandingpageController extends Controller
             'kategori'
         ));
     }
+
+    public function show(Berita $berita)
+    {
+        $rekomendasi = Berita::where('kategori_id', $berita->kategori_id)
+            ->where('berita_id', '!=', $berita->berita_id)
+            ->latest()
+            ->take(5)
+            ->get();
+
+        return view('landingpage.bacaberita', compact('berita', 'rekomendasi'));
+    }
 }

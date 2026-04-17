@@ -50,7 +50,7 @@
                                 <span class="mb-0 fs-3 fw-medium">My Profile</span>
                             </a>
 
-                            <a href="javascript:void(0)"
+                            {{-- <a href="javascript:void(0)"
                                 class="d-flex align-items-center gap-3 dropdown-item px-3 py-2 rounded-2 mb-1">
                                 <i class="ti ti-mail fs-5 text-success"></i>
                                 <span class="mb-0 fs-3 fw-medium">My Account</span>
@@ -60,7 +60,7 @@
                                 class="d-flex align-items-center gap-3 dropdown-item px-3 py-2 rounded-2 mb-3">
                                 <i class="ti ti-list-check fs-5 text-warning"></i>
                                 <span class="mb-0 fs-3 fw-medium">My Task</span>
-                            </a>
+                            </a> --}}
 
                             <!-- Divider -->
                             <div class="dropdown-divider my-2"></div>

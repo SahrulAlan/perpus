@@ -9,7 +9,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav fw-medium">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link active" href="/#">Home</a>
                 </li>
                 <li class="nav-item">
@@ -23,9 +23,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/#news">Berita</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/login">Login Admin</a>
                 </li>
             </ul>
         </div>

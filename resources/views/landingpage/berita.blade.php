@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('conten')
+@section('content')
     <section class="py-5 bg-light page-header-offset">
         <div class="container">
 
@@ -88,7 +88,8 @@
                                     {{ Str::limit(strip_tags($b->konten), 100) }}
                                 </p>
                                 </p>
-                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill mt-2">
+                                <a href="{{ route('landingpage.berita.show', $b->slug) }}"
+                                    class="btn btn-outline-primary btn-sm rounded-pill mt-2">
                                     Selengkapnya
                                 </a>
                             </div>

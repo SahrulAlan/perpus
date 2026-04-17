@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\ProfileController;
@@ -58,4 +59,7 @@ Route::middleware(['CekLogin'])->group(function () {
     Route::get('/pustakawans/{id}/edit', [PustakawanController::class, 'edit'])->name('pustakawan.edit');
     Route::put('/pustakawans/{id}', [PustakawanController::class, 'update'])->name('pustakawan.update');
     Route::delete('/pustakawans/{id}', [PustakawanController::class, 'destroy'])->name('pustakawan.destroy');
+
+    #dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
