@@ -52,27 +52,43 @@
             </div>
 
             <div class="row g-4 justify-content-center">
-                <!-- SLiMS Card -->
+                <!-- OPAC Card -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card system-card h-100 shadow-sm p-4 text-center">
+
                         <div class="icon-wrapper">
-                            <i class="bi bi-bookshelf fs-1"></i>
+                            <i class="bi bi-search fs-1"></i>
                         </div>
-                        <h4 class="fw-bold mb-2">SLiMS</h4>
-                        <div class="badge-system mb-3">Sistem Manajemen Perpustakaan</div>
-                        <p class="text-secondary mb-4">Cari koleksi buku fisik di perpustakaan, cek ketersediaan, dan
-                            temukan lokasinya di rak dengan mudah.</p>
+
+                        <h4 class="fw-bold mb-2">OPAC</h4>
+
+                        <div class="badge-system mb-3">
+                            Online Public Access Catalog
+                        </div>
+
+                        <p class="text-secondary mb-4">
+                            Akses katalog online untuk mencari koleksi buku Perpustakaan Universitas Nurul Huda (UNUHA),
+                            cek ketersediaan, dan informasi lokasi buku dengan cepat dan mudah.
+                        </p>
+
                         <div class="feature-list mb-4">
-                            <small class="text-muted d-block"><i class="bi bi-check-circle-fill text-success me-1"></i>
-                                10.000+ Koleksi Buku</small>
-                            <small class="text-muted d-block"><i class="bi bi-check-circle-fill text-success me-1"></i>
-                                Real-time Availability</small>
+                            <small class="text-muted d-block">
+                                <i class="bi bi-check-circle-fill text-success me-1"></i>
+                                Akses Katalog Buku Online 24/7
+                            </small>
+
+                            <small class="text-muted d-block">
+                                <i class="bi bi-check-circle-fill text-success me-1"></i>
+                                Pencarian Koleksi Real-time
+                            </small>
                         </div>
+
                         <div class="mt-auto">
-                            <a href="#" class="btn btn-custom w-100">
-                                Akses SLiMS <i class="bi bi-box-arrow-up-right ms-2"></i>
+                            <a href="https://opac.unuha.ac.id" target="_blank" class="btn btn-custom w-100">
+                                Akses OPAC <i class="bi bi-box-arrow-up-right ms-2"></i>
                             </a>
                         </div>
+
                     </div>
                 </div>
 
