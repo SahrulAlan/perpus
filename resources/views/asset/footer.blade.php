@@ -3,8 +3,8 @@
         <div class="row gy-4">
             <div class="col-lg-5">
                 <h4 class="text-white fw-bold mb-3">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="UNUHA Library" class="me-2"
-                        style="height: 40px;">UNUHA Library
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="Portal Perpus UNUHA" class="me-2"
+                        style="height: 40px;">Portal Perpus UNUHA
                 </h4>
                 <p class="pe-lg-5">
                     Portal terintegrasi untuk seluruh layanan sistem

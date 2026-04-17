@@ -4,8 +4,9 @@
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
             <a href="/dashboard" class="text-nowrap logo-img d-flex align-items-center">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="UNUHA Library" class="me-2" style="height: 50px;">
-                <span class="logo-text fw-bold d-none d-lg-block">UNUHA Library</span>
+                <img src="{{ asset('assets/images/logo.png') }}" alt="Portal Perpus UNUHA" class="me-2"
+                    style="height: 50px;">
+                <span class="logo-text fw-bold d-none d-lg-block">Portal Perpus UNUHA</span>
             </a>
 
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
