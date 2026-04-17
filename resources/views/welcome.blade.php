@@ -24,11 +24,18 @@
         content="Akses katalog buku, repository, dan layanan perpustakaan digital UNUHA secara online." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://perpus.unuha.ac.id/" />
-    <meta property="og:image" content="https://perpus.unuha.ac.id/logo.png" />
+    <meta property="og:image" content="{{ asset('assets/images/logo.png') }}" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}">
+
+    <!-- Apple Touch Icon (iPhone / iPad) -->
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/logo.png') }}">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
 
     @include('asset.style')
 </head>
