@@ -616,4 +616,25 @@
     .org-image:hover {
         transform: scale(1.02);
     }
+
+    /* halaman bebas pustaka */
+    .requirement-card {
+        transition: .3s ease;
+    }
+
+    .requirement-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .08) !important;
+    }
+
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+    }
 </style>

@@ -9,10 +9,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PustakawanController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [LandingpageController::class, 'index'])->name('landingpage.index');
 
 #frontPage
 Route::get('/', [LandingpageController::class, 'index'])->name('landingpage.index');
+Route::get('/bebas-pustaka', [LandingpageController::class, 'bebasperpus'])->name('landingpage.bebasperpus');
 Route::get('berita/beritafront', [LandingpageController::class, 'berita'])->name('landingpage.berita');
 Route::get('pustakawan/frontpage', [LandingpageController::class, 'pustakawan'])->name('landingpage.pustakawan');
 Route::get('/bacaberita/{berita:slug}', [LandingpageController::class, 'show'])->name('landingpage.berita.show');

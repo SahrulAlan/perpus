@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class LandingpageController extends Controller
 {
+    public function bebasperpus()
+    {
+        return view('landingpage.bebas-pustaka');
+    }
+
     public function index()
     {
         $pustakawan = Pustakawan::latest()->paginate(10);

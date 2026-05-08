@@ -23,8 +23,9 @@
                                 class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-primary shadow me-3">
                                 Jelajahi Sistem Kami <i class="bi bi-arrow-right ms-2"></i>
                             </a>
-                            <a href="/#contact" class="btn btn-outline-light btn-lg rounded-pill px-5">
-                                <i class="bi bi-headset me-2"></i>Hubungi Kami
+                            <a href="{{ route('landingpage.bebasperpus') }}"
+                                class="btn btn-outline-light btn-lg rounded-pill px-5">
+                                <i class="bi bi-headset me-2"></i>Bebas Perpustakaan <i class="bi bi-arrow-right ms-2"></i>
                             </a>
                         </div>
                     </div>
