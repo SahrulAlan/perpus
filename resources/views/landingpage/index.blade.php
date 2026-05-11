@@ -23,9 +23,8 @@
                                 class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-primary shadow me-3">
                                 Jelajahi Sistem Kami <i class="bi bi-arrow-right ms-2"></i>
                             </a>
-                            <a href="{{ route('landingpage.bebasperpus') }}"
-                                class="btn btn-outline-light btn-lg rounded-pill px-5">
-                                <i class="bi bi-headset me-2"></i>Bebas Perpustakaan <i class="bi bi-arrow-right ms-2"></i>
+                            <a href="/#contact" class="btn btn-outline-light btn-lg rounded-pill px-5">
+                                <i class="bi bi-headset me-2"></i>Hubungi Kami
                             </a>
                         </div>
                     </div>
@@ -140,6 +139,44 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informasi Bebas Perpustakaan -->
+    <section id="bebas-perpus" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Gambar -->
+                <div class="col-lg-6 text-center" data-aos="fade-right">
+                    <img src="{{ asset('assets/images/alur.png') }}" alt="Alur Bebas Perpustakaan"
+                        class="img-fluid rounded shadow-sm">
+                </div>
+
+                <!-- Konten -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-3">
+                        <i class="bi bi-journal-check me-1"></i> Bebas Perpustakaan
+                    </span>
+
+                    <h2 class="fw-bold text-dark mb-3">
+                        Informasi <span class="text-gradient">Bebas Perpustakaan</span>
+                    </h2>
+
+                    <p class="text-muted fs-5 mb-4">
+                        Mahasiswa yang akan menyelesaikan studi diwajibkan memenuhi persyaratan bebas perpustakaan.
+                        Silakan lihat alur pengajuan dan persyaratan lengkap melalui halaman berikut.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="{{ route('landingpage.bebasperpus') }}" class="btn btn-custom px-4 py-2">
+                            Lihat Persyaratan
+                            <i class="bi bi-arrow-right-circle ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

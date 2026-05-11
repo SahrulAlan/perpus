@@ -35,7 +35,7 @@
                     <!-- Isi -->
                     <div class="news-content text-secondary fs-5" style="line-height: 1.8;">
                         <p>
-                            {{ strip_tags($berita->konten) }}
+                            {!! $berita->konten !!}
                         </p>
                     </div>
 
