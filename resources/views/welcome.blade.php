@@ -36,6 +36,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 
+    <!-- Open Graph (biar bagus di share WA / FB) -->
+    <meta property="og:title" content="@yield('og_title', 'Portal Perpustakaan UNUHA')">
+    <meta property="og:description" content="@yield('og_description', 'Akses katalog buku, repository, dan layanan perpustakaan digital UNUHA secara online.')">
+    <meta property="og:image" content="@yield('og_image', asset('assets/images/logo.png'))">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+
+
 
     @include('asset.style')
 </head>

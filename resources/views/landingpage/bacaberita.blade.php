@@ -1,4 +1,8 @@
 @extends('welcome')
+@section('title', $berita->slug)
+@section('og_title', $berita->judul)
+@section('og_description', Str::limit(strip_tags($berita->konten), 150))
+@section('og_image', asset('storage/foto_berita/' . $berita->foto))
 
 @section('content')
     <section class="py-5 bg-light">
