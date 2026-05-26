@@ -19,12 +19,12 @@
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph (biar bagus di share WA/Facebook) -->
-    <meta property="og:title" content="Portal Perpustakaan UNUHA" />
-    <meta property="og:description"
-        content="Akses katalog buku, repository, dan layanan perpustakaan digital UNUHA secara online." />
+    <meta property="og:title" content="@yield('og_title', 'PMII OKU Timur')">
+    <meta property="og:description" content="@yield('og_description', 'Akses katalog buku, repository, dan layanan perpustakaan digital UNUHA secara online.')">
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://perpus.unuha.ac.id/" />
-    <meta property="og:image" content="{{ asset('assets/images/logo.png') }}" />
+    <meta property="og:url" content="{{ url()->current() }}">
+    {{-- <meta property="og:image" content="{{ asset('assets/images/logo.png') }}" /> --}}
+    <meta property="og:image" content="@yield('og_image', asset('assets/images/logo.png'))" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}">
