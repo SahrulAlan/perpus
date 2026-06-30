@@ -83,15 +83,15 @@
 
                         <ul class="text-secondary mb-0">
                             <li>
-                                Menyerahkan skripsi yang telah:
+                                Menyerahkan hard copy tugas akhir/skripsi yang telah:
                                 <ul>
                                     <li>ditandatangani oleh Dekan</li>
-                                    <li>dan dicap resmi oleh fakultas</li>
+                                    <li>dan dicap resmi oleh Fakultas</li>
                                 </ul>
                             </li>
 
                             <li>
-                                Jumlah: <strong>2 eksemplar</strong>
+                                Jumlah: <strong>1 eksemplar/jilid</strong>
                             </li>
                         </ul>
 
@@ -112,12 +112,13 @@
 
                         <ul class="text-secondary mb-0">
                             <li>
-                                Dicetak menggunakan kertas ukuran <strong>A4</strong>
+                                Hard copy tugas akhir/skripsi dicetak menggunakan
+                                kertas ukuran <strong>A4</strong>.
                             </li>
 
                             <li>
-                                Warna sampul skripsi harus mengikuti ketentuan
-                                masing-masing fakultas
+                                Warna sampul harus mengikuti pedoman tugas akhir/skripsi
+                                masing-masing fakultas.
                             </li>
                         </ul>
 
@@ -142,20 +143,21 @@
 
                         <ul class="text-secondary">
                             <li>Cover</li>
-                            <li>Halaman pengesahan yang sudah ditandatangani</li>
+                            <li>Halaman pengesahan yang telah ditandatangani</li>
+                            <li>Cap dan tanda tangan dekan</li>
                             <li>Isi skripsi</li>
                             <li>Lampiran</li>
                         </ul>
 
                         <div class="alert alert-warning border-0 rounded-4 mb-0">
                             <i class="bi bi-exclamation-circle-fill me-2"></i>
-                            Halaman pengesahan dapat di-scan terlebih dahulu lalu
-                            digabung menjadi satu file PDF bersama skripsi.
+                            Halaman pengesahan yang telah ditandatangani dapat dipindai
+                            (scan) terlebih dahulu, kemudian digabungkan menjadi satu
+                            file PDF bersama dokumen skripsi.
                         </div>
 
                     </div>
                 </div>
-
                 {{-- 4 --}}
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card border-0 shadow-sm rounded-4 h-100 p-4 requirement-card">
@@ -170,8 +172,8 @@
 
                         <ul class="text-secondary">
                             <li>
-                                File skripsi harus dalam format
-                                <strong>PDF (.pdf)</strong>
+                                File tugas akhir/skripsi harus dalam format
+                                <strong>PDF (.pdf)</strong>.
                             </li>
                         </ul>
 
@@ -181,7 +183,7 @@
                             </small>
 
                             <code class="text-dark fs-6">
-                                Judul Skripsi - Nama Mahasiswa - Program Studi
+                                Nama Mahasiswa - Prodi - Tahun Lulus
                             </code>
                         </div>
 
@@ -214,8 +216,10 @@
 
                         <div class="alert alert-info border-0 rounded-4 mb-0">
                             <i class="bi bi-person-check-fill me-2"></i>
-                            Sebelum upload, mahasiswa perlu melakukan konfirmasi
-                            kepada admin perpustakaan untuk dibuatkan akun login SIREPO.
+
+                            Sebelum melakukan upload, mahasiswa wajib melakukan
+                            konfirmasi kepada admin perpustakaan untuk dibuatkan
+                            akun login <strong>SIREPO</strong>.
                         </div>
 
                     </div>
@@ -235,18 +239,23 @@
 
                         <ul class="text-secondary">
                             <li>
-                                Topik/judul buku sesuai dengan program studi atau penelitian
-                                masing-masing
+                                Judul atau isi buku harus sesuai dengan Program Studi
+                                atau penelitian.
                             </li>
 
                             <li>
-                                Buku merupakan terbitan terbaru
-                                (maksimal 5 tahun terakhir)
+                                Buku merupakan <strong>terbitan terbaru</strong>,
+                                maksimal <strong>3 tahun terakhir</strong>.
                             </li>
 
                             <li>
-                                Buku yang disumbangkan tidak boleh melebihi
-                                5 eksemplar dari koleksi perpustakaan
+                                Buku yang disumbangkan belum melebihi jumlah
+                                eksemplar yang dimiliki perpustakaan.
+                            </li>
+
+                            <li>
+                                Maksimal <strong>1 judul memiliki 5 eksemplar</strong>
+                                di perpustakaan.
                             </li>
                         </ul>
 
@@ -265,16 +274,15 @@
 
                             <strong>Penting:</strong><br>
 
-                            Disarankan menggunakan laptop atau desktop/PC
+                            Disarankan menggunakan <strong>laptop atau desktop/PC</strong>
                             saat mengecek jumlah eksemplar buku.
 
-                            Jika membuka melalui HP/mobile,
-                            informasi jumlah eksemplar sering tidak tampil lengkap.
+                            Jika membuka melalui <strong>HP/mobile</strong>,
+                            informasi jumlah eksemplar sering tidak tampil secara lengkap.
                         </div>
 
                     </div>
                 </div>
-
                 {{-- 7 --}}
                 <div class="col-lg-12" data-aos="fade-up" data-aos-delay="600">
                     <div class="card border-0 shadow-sm rounded-4 p-4 requirement-card">
@@ -288,28 +296,79 @@
                             </div>
 
                             <div class="col-md-10">
+
                                 <h4 class="fw-bold mb-3">
                                     7. Lokasi Pengurusan Bebas Pustaka
                                 </h4>
 
-                                <p class="text-secondary mb-3">
-                                    Proses pengurusan bebas pustaka dapat dilakukan di:
+                                <p class="text-secondary mb-4">
+                                    Pengurusan bebas pustaka dilakukan sesuai dengan fakultas
+                                    masing-masing mahasiswa sebagai berikut:
                                 </p>
 
-                                <div class="row">
+                                <div class="row g-3">
+
                                     <div class="col-md-6">
-                                        <div class="bg-light rounded-4 p-3 border mb-3 mb-md-0">
-                                            <i class="bi bi-building me-2 text-primary"></i>
-                                            Perpustakaan Kampus A
+                                        <div class="bg-light rounded-4 p-4 border h-100">
+
+                                            <div class="d-flex align-items-center mb-3">
+                                                <i class="bi bi-building text-primary fs-3 me-3"></i>
+
+                                                <div>
+                                                    <h6 class="fw-bold mb-1">
+                                                        Fakultas Agama Islam (FAI)
+                                                    </h6>
+                                                    <small class="text-muted">
+                                                        Perpustakaan Kampus A
+                                                    </small>
+                                                </div>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-building text-primary fs-3 me-3"></i>
+
+                                                <div>
+                                                    <h6 class="fw-bold mb-1">
+                                                        Fakultas Sains & Teknologi (FST)
+                                                    </h6>
+                                                    <small class="text-muted">
+                                                        Perpustakaan Kampus A
+                                                    </small>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="bg-light rounded-4 p-3 border">
-                                            <i class="bi bi-building me-2 text-primary"></i>
-                                            Perpustakaan Kampus C
+                                        <div class="bg-light rounded-4 p-4 border h-100">
+
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-building text-primary fs-3 me-3"></i>
+
+                                                <div>
+                                                    <h6 class="fw-bold mb-1">
+                                                        Fakultas Ilmu Pendidikan (FIP)
+                                                    </h6>
+                                                    <small class="text-muted">
+                                                        Perpustakaan Kampus C
+                                                    </small>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
+
+                                </div>
+
+                                <div class="alert alert-primary border-0 rounded-4 mt-4 mb-0">
+                                    <i class="bi bi-info-circle-fill me-2"></i>
+
+                                    Pastikan seluruh persyaratan telah dipenuhi sebelum
+                                    mengajukan bebas pustaka agar proses verifikasi dapat
+                                    dilakukan dengan lebih cepat.
                                 </div>
 
                             </div>
